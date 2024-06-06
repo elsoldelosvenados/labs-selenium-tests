@@ -1,11 +1,15 @@
 package step_definitions;
 
 import io.cucumber.java8.En;
+import pages.Google;
 
 public class GoogleSD implements En {
+    Google google;
     public GoogleSD(){
+
         Given("The user is on the google home page", ()->{
-            System.out.println("Opening google.");
+            google = new Google();
+            google.navigateToHome();
         });
         When("The user search for the word {string}", (String query) -> {
             System.out.println("Searching for ".concat(query));
