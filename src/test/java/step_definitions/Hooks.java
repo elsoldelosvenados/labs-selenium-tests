@@ -6,6 +6,7 @@ import pages.PageObjectBase;
 public class Hooks implements En {
     public Hooks(){
         After(()->{
+            PageObjectBase.reportEnd();
             PageObjectBase.driver.quit();
         });
     }

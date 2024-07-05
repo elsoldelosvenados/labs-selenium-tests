@@ -1,5 +1,8 @@
 package pages;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 import java.util.logging.Logger;
 
 public class Google extends PageObjectBase {
@@ -9,8 +12,9 @@ public class Google extends PageObjectBase {
         try{
            driver.get("https://google.com");
            Thread.sleep(3000);
+           info("This is the google home", ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64));
         }catch (Exception exception){
-            logger.warning("There was an error while navigation to the google home.");
+            error("There was an error while navigation to the google home. " + exception.getMessage());
         }
     }
 

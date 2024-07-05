@@ -15,4 +15,5 @@ dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.21.0'
     implementation group: 'io.cucumber', name: 'cucumber-java8', version: '7.18.0'
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.18.0'
+    testImplementation 'com.aventstack:extentreports:5.0.9'
 }
