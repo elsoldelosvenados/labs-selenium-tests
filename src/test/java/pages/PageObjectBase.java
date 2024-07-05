@@ -31,14 +31,14 @@ public class PageObjectBase {
             test.assignAuthor("Andres macbook");
             driver =  new ChromeDriver();
         }catch (Exception exception){
-            logger.warning("There was an error while initiating the page object base. "  + exception.getMessage());
+            error("There was an error while initiating the page object base. "  + exception.getMessage());
         }
     }
 
-    protected void info(String message, String base64IMG){
+    protected static void info(String message, String base64IMG){
         test.info(message, MediaEntityBuilder.createScreenCaptureFromBase64String(base64IMG).build());
     }
-    protected void error(String message){
+    protected static void error(String message){
         test.fail(message);
     }
     public static void reportEnd(){
