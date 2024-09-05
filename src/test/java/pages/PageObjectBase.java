@@ -32,6 +32,7 @@ public class PageObjectBase {
             driver =  new ChromeDriver();
         }catch (Exception exception){
             error("There was an error while initiating the page object base. "  + exception.getMessage());
+            logger.severe("Error while initialing the driver " + exception.getMessage());
         }
     }
 
