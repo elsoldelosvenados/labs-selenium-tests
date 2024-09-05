@@ -12,6 +12,7 @@ public class Google extends PageObjectBase {
         try{
            driver.get("https://google.com");
            Thread.sleep(3000);
+           logger.info("INSIDE THE CHROME INSTANCE.");
            info("This is the google home", ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64));
         }catch (Exception exception){
             error("There was an error while navigation to the google home. " + exception.getMessage());
