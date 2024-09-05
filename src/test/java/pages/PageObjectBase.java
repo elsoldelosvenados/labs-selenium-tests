@@ -4,8 +4,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.logging.Logger;
 
@@ -29,7 +31,13 @@ public class PageObjectBase {
             extentSparkReporter.config().setDocumentTitle("Lover land");
             test = extent.createTest("Este es el nombre del test");
             test.assignAuthor("Andres macbook");
-            driver =  new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--remote-debugging-port=9222");
+            driver =  new ChromeDriver(options);
         }catch (Exception exception){
             error("There was an error while initiating the page object base. "  + exception.getMessage());
             logger.severe("Error while initialing the driver " + exception.getMessage());
