@@ -33,10 +33,6 @@ public class PageObjectBase {
             test.assignAuthor("Andres macbook");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--remote-debugging-port=9222");
             driver =  new ChromeDriver(options);
         }catch (Exception exception){
             error("There was an error while initiating the page object base. "  + exception.getMessage());
